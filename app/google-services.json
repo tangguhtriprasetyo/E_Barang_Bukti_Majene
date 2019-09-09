@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "623378706038",
+    "firebase_url": "https://e-barang-bukti-majene.firebaseio.com",
+    "project_id": "e-barang-bukti-majene",
+    "storage_bucket": "e-barang-bukti-majene.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623378706038:android:5f3434c042c797778b3957",
+        "android_client_info": {
+          "package_name": "com.example.e_barangbuktimajene"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623378706038-cd4mnuo53qbs19agc78eq2kggqk1o3dn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.e_barangbuktimajene",
+            "certificate_hash": "66beeb68b0987a8abac556209cc5ad5d85ede6cc"
+          }
+        },
+        {
+          "client_id": "623378706038-t8cu1sqvmu44qrptrb6lqj8ria65qa2b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBojJ-icZSSYtdXiv6kCvZHtT_C7T073CI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623378706038-t8cu1sqvmu44qrptrb6lqj8ria65qa2b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

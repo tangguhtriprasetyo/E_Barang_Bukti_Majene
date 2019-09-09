@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/activity_vertical"
+        android:layout_marginBottom="@dimen/activity_vertical"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal"
+            android:layout_marginTop="@dimen/activity_vertical"
+            android:layout_marginRight="@dimen/activity_horizontal">
+
+            <ImageView
+                android:id="@+id/title_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/activity_vertical"
+                android:layout_marginBottom="@dimen/activity_vertical"
+                android:src="@drawable/logo_large" />
+
+            <TextView
+                android:id="@+id/tv_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/activity_vertical"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/tv_title1"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/tv_institution"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/activity_horizontal"
+            android:layout_marginTop="@dimen/activity_vertical"
+            android:layout_marginEnd="@dimen/activity_horizontal"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view1"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                card_view:cardBackgroundColor="@color/colorPrimary"
+                card_view:cardCornerRadius="6dp"
+                card_view:cardElevation="4dp"
+                card_view:cardMaxElevation="6dp"
+                card_view:contentPaddingBottom="25dp"
+                card_view:contentPaddingLeft="8dp"
+                card_view:contentPaddingRight="8dp"
+                card_view:contentPaddingTop="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_process" />
+
+                    <TextView
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/activity_horizontal"
+                        android:gravity="center"
+                        android:text="Sedang Diproses"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/ic_arrow" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view2"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                card_view:cardBackgroundColor="@color/colorPrimary"
+                card_view:cardCornerRadius="6dp"
+                card_view:cardElevation="4dp"
+                card_view:cardMaxElevation="6dp"
+                card_view:contentPaddingBottom="25dp"
+                card_view:contentPaddingLeft="8dp"
+                card_view:contentPaddingRight="8dp"
+                card_view:contentPaddingTop="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_taken" />
+
+                    <TextView
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/activity_horizontal"
+                        android:gravity="center"
+                        android:text="Dirampas Negara"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/ic_arrow" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view3"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                card_view:cardBackgroundColor="@color/colorPrimary"
+                card_view:cardCornerRadius="6dp"
+                card_view:cardElevation="4dp"
+                card_view:cardMaxElevation="6dp"
+                card_view:contentPaddingBottom="25dp"
+                card_view:contentPaddingLeft="8dp"
+                card_view:contentPaddingRight="8dp"
+                card_view:contentPaddingTop="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_returned" />
+
+                    <TextView
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/activity_horizontal"
+                        android:gravity="center"
+                        android:text="Dikembalikan"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+
+                        android:src="@drawable/ic_arrow" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
