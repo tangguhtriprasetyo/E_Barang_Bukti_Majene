@@ -1,11 +1,13 @@
 package com.example.e_barangbuktimajene;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,9 +15,15 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import static com.example.e_barangbuktimajene.DetailActivity.EXTRA_IMAGE;
+import static com.example.e_barangbuktimajene.DetailActivity.EXTRA_INFO;
+import static com.example.e_barangbuktimajene.DetailActivity.EXTRA_NAME;
+import static com.example.e_barangbuktimajene.DetailActivity.EXTRA_REG;
+import static com.example.e_barangbuktimajene.DetailActivity.EXTRA_STATUS;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    Context context;
+    private Context context;
     List<ImageUploadInfo> MainImageUploadInfoList;
 
     public RecyclerViewAdapter(Context context, List<ImageUploadInfo> TempList) {
@@ -36,7 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         ImageUploadInfo UploadInfo = MainImageUploadInfoList.get(position);
 
         holder.imageNameTextView.setText(UploadInfo.getImageName());
@@ -46,6 +54,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         //Loading image from Glide library.
         Glide.with(context).load(UploadInfo.getImageURL()).into(holder.imageView);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ImageUploadInfo clickedDataItem = MainImageUploadInfoList.get(holder.getAdapterPosition());
+                Toast.makeText(context, clickedDataItem.getImageName(), Toast.LENGTH_SHORT).show();
+
+
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra(EXTRA_NAME, clickedDataItem.getImageName());
+                intent.putExtra(EXTRA_REG, clickedDataItem.getRegistrationName());
+                intent.putExtra(EXTRA_INFO, clickedDataItem.getInformationName());
+                intent.putExtra(EXTRA_STATUS, clickedDataItem.getStatusName());
+                intent.putExtra(EXTRA_IMAGE, clickedDataItem.getImageURL());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+
+            }
+        });
+
     }
 
     @Override

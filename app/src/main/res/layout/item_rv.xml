@@ -8,7 +8,7 @@
     android:layout_marginTop="@dimen/activity_vertical"
     android:layout_marginEnd="@dimen/activity_horizontal"
     android:layout_marginBottom="@dimen/activity_vertical"
-    card_view:cardBackgroundColor="@color/colorPrimaryDark"
+    card_view:cardBackgroundColor="@color/coloronSecondary"
     card_view:cardCornerRadius="6dp"
     card_view:cardElevation="4dp"
     card_view:cardMaxElevation="6dp"
