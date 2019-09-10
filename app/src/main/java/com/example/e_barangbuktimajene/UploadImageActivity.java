@@ -16,11 +16,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -386,13 +386,13 @@ public class UploadImageActivity extends AppCompatActivity {
 
     public void showDialog() {
         // Initializing a new alert dialog
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
 
         // Set the alert dialog title
         builder.setTitle("Pilih Status Barang Bukti");
         builder.setSingleChoiceItems(
                 STATUSITEM,
-                -1, // Index of checked item (-1 = no selection)
+                0, // Index of checked item (-1 = no selection)
                 new DialogInterface.OnClickListener() // Item click listener
                 {
                     @Override
@@ -420,6 +420,7 @@ public class UploadImageActivity extends AppCompatActivity {
 
                             }
                         });
+                        Toast.makeText(UploadImageActivity.this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
                         break;
 
                     case "Dirampas":
@@ -434,6 +435,7 @@ public class UploadImageActivity extends AppCompatActivity {
 
                             }
                         });
+                        Toast.makeText(UploadImageActivity.this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
                         break;
 
                     case "Dikembalikan":
@@ -448,16 +450,11 @@ public class UploadImageActivity extends AppCompatActivity {
 
                             }
                         });
+                        Toast.makeText(UploadImageActivity.this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
                         break;
-
                 }
             }
-        });
-
-        AlertDialog dialog = builder.create();
-
-        // Finally, display the alert dialog
-        dialog.show();
+        }).show();
 
     }
 
