@@ -5,17 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/activity_horizontal"
-    android:layout_marginTop="16dp"
+    android:layout_marginTop="@dimen/activity_vertical"
     android:layout_marginEnd="@dimen/activity_horizontal"
-    android:layout_marginBottom="16dp"
-    card_view:cardBackgroundColor="@color/colorPrimary"
+    android:layout_marginBottom="@dimen/activity_vertical"
+    card_view:cardBackgroundColor="@color/colorPrimaryDark"
     card_view:cardCornerRadius="6dp"
     card_view:cardElevation="4dp"
     card_view:cardMaxElevation="6dp"
-    card_view:contentPaddingBottom="25dp"
-    card_view:contentPaddingLeft="8dp"
-    card_view:contentPaddingRight="8dp"
-    card_view:contentPaddingTop="25dp">
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,7 +27,7 @@
             android:layout_toEndOf="@id/img_photo"
             android:text="Nama Barang Bukti"
             android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:textSize="32sp" />
 
         <TextView
 
@@ -44,7 +41,7 @@
             android:layout_toEndOf="@id/img_photo"
             android:text="No. Registration"
             android:textColor="@android:color/darker_gray"
-            android:textSize="12sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tv_item_info"
@@ -56,7 +53,7 @@
             android:layout_toEndOf="@id/img_photo"
             android:maxLines="1"
             android:text="Keterangan"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
 
         <TextView
@@ -65,11 +62,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_item_info"
             android:layout_marginStart="@dimen/activity_horizontal"
-
+            android:layout_marginBottom="@dimen/activity_vertical"
             android:layout_marginEnd="@dimen/activity_horizontal"
             android:layout_toEndOf="@id/img_photo"
             android:text="Status"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
 
         <de.hdodenhof.circleimageview.CircleImageView
