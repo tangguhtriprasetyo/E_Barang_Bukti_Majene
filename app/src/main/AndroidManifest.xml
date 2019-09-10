@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DisplayImageActivity"></activity>
+        <activity android:name=".DisplayStatusTaken"></activity>
+        <activity android:name=".DisplayStatusReturned" />
+        <activity android:name=".DisplayStatusProcess" />
         <activity android:name=".UploadImageActivity" />
         <activity android:name=".DetailActivity" />
         <activity
@@ -26,5 +28,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

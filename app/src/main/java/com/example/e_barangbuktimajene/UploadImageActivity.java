@@ -31,12 +31,13 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.util.Arrays;
 
+import static com.example.e_barangbuktimajene.MainActivity.Database_Path_Process;
+import static com.example.e_barangbuktimajene.MainActivity.Database_Path_Return;
+import static com.example.e_barangbuktimajene.MainActivity.Database_Path_Taken;
+
 public class UploadImageActivity extends AppCompatActivity {
 
-    // Root Database Name for Firebase Database.
-    public static final String Database_Path_Process = "On_Process_Item";
-    public static final String Database_Path_Taken = "Taken_Item";
-    public static final String Database_Path_Return = "Return_Item";
+
     private static final String[] STATUSITEM = {
             "Diproses",
             "Dirampas",
@@ -49,7 +50,7 @@ public class UploadImageActivity extends AppCompatActivity {
     EditText ImageName;
     EditText RegistrationName;
     EditText InformationName;
-    String StatusName;
+    String StatusName = "Pilih Status Barang Bukti!";
 
     Button UploadButton;
 
@@ -386,13 +387,13 @@ public class UploadImageActivity extends AppCompatActivity {
 
     public void showDialog() {
         // Initializing a new alert dialog
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+        final MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
 
         // Set the alert dialog title
         builder.setTitle("Pilih Status Barang Bukti");
         builder.setSingleChoiceItems(
                 STATUSITEM,
-                0, // Index of checked item (-1 = no selection)
+                -1, // Index of checked item (-1 = no selection)
                 new DialogInterface.OnClickListener() // Item click listener
                 {
                     @Override
@@ -407,52 +408,7 @@ public class UploadImageActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 // Just dismiss the alert dialog after selection
                 // Or do something now
-                switch (StatusName) {
-                    case "Diproses":
-
-                        // Adding click listener to Upload image button.
-                        UploadButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-
-                                // Calling method to upload selected image on Firebase storage.
-                                UploadProcess();
-
-                            }
-                        });
-                        Toast.makeText(UploadImageActivity.this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
-                        break;
-
-                    case "Dirampas":
-
-                        // Adding click listener to Upload image button.
-                        UploadButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-
-                                // Calling method to upload selected image on Firebase storage.
-                                UploadTaken();
-
-                            }
-                        });
-                        Toast.makeText(UploadImageActivity.this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
-                        break;
-
-                    case "Dikembalikan":
-
-                        // Adding click listener to Upload image button.
-                        UploadButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-
-                                // Calling method to upload selected image on Firebase storage.
-                                UploadReturn();
-
-                            }
-                        });
-                        Toast.makeText(UploadImageActivity.this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
-                        break;
-                }
+                selectedStatus();
             }
         }).show();
 
@@ -466,5 +422,59 @@ public class UploadImageActivity extends AppCompatActivity {
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Please Select Image"), Image_Request_Code);
+    }
+
+    public void selectedStatus() {
+        switch (StatusName) {
+
+            case "Diproses":
+
+                // Adding click listener to Upload image button.
+                UploadButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        // Calling method to upload selected image on Firebase storage.
+                        UploadProcess();
+
+                    }
+                });
+                Toast.makeText(UploadImageActivity.this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
+                break;
+
+            case "Dirampas":
+
+                // Adding click listener to Upload image button.
+                UploadButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        // Calling method to upload selected image on Firebase storage.
+                        UploadTaken();
+
+                    }
+                });
+                Toast.makeText(UploadImageActivity.this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
+                break;
+
+            case "Dikembalikan":
+
+                // Adding click listener to Upload image button.
+                UploadButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        // Calling method to upload selected image on Firebase storage.
+                        UploadReturn();
+
+                    }
+                });
+                Toast.makeText(UploadImageActivity.this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
+                break;
+
+            default:
+                Toast.makeText(UploadImageActivity.this, StatusName, Toast.LENGTH_LONG).show();
+                showDialog();
+        }
     }
 }

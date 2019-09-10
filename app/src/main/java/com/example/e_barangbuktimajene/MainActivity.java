@@ -8,8 +8,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.storage.StorageReference;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Root Database Name for Firebase Database.
+    public static final String Database_Path_Process = "On_Process_Item";
+    public static final String Database_Path_Taken = "Taken_Item";
+    public static final String Database_Path_Return = "Return_Item";
+
     CardView process, returned, taken;
 
 
@@ -36,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent intent = new Intent(MainActivity.this, DisplayStatusProcess.class);
+                startActivity(intent);
+
             }
         });
 
@@ -43,12 +54,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent intent = new Intent(MainActivity.this, DisplayStatusTaken.class);
+                startActivity(intent);
+
             }
         });
 
         returned.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, DisplayStatusReturned.class);
+                startActivity(intent);
 
             }
         });
