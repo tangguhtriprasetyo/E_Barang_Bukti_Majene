@@ -12,21 +12,28 @@ public class ImageUploadInfo {
 
     public String informationName;
 
+    public String imageID;
+
     public ImageUploadInfo() {
 
     }
 
-    public ImageUploadInfo(String name, String reg, String info, String status, String url) {
+    public ImageUploadInfo(String name, String reg, String info, String status, String url, String id) {
 
         this.imageName = name;
         this.registrationName = reg;
         this.informationName = info;
         this.statusName = status;
         this.imageURL = url;
+        this.imageID = id;
     }
 
     public String getImageName() {
         return imageName;
+    }
+
+    public String getImageID() {
+        return imageID;
     }
 
     public String getRegistrationName() {

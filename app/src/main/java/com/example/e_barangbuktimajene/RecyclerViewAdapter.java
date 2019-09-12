@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import static com.example.e_barangbuktimajene.DetailActivity.EXTRA_IMAGE;
+import static com.example.e_barangbuktimajene.DetailActivity.EXTRA_IMAGEID;
 import static com.example.e_barangbuktimajene.DetailActivity.EXTRA_INFO;
 import static com.example.e_barangbuktimajene.DetailActivity.EXTRA_NAME;
 import static com.example.e_barangbuktimajene.DetailActivity.EXTRA_REG;
@@ -59,7 +60,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View view) {
                 ImageUploadInfo clickedDataItem = MainImageUploadInfoList.get(holder.getAdapterPosition());
-                Toast.makeText(context, clickedDataItem.getImageName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, clickedDataItem.getImageID(), Toast.LENGTH_SHORT).show();
 
 
                 Intent intent = new Intent(context, DetailActivity.class);
@@ -68,6 +69,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 intent.putExtra(EXTRA_INFO, clickedDataItem.getInformationName());
                 intent.putExtra(EXTRA_STATUS, clickedDataItem.getStatusName());
                 intent.putExtra(EXTRA_IMAGE, clickedDataItem.getImageURL());
+                intent.putExtra(EXTRA_IMAGEID, clickedDataItem.getImageID());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
 

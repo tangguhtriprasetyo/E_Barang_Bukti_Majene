@@ -175,10 +175,12 @@ public class UploadImageActivity extends AppCompatActivity {
                                     // Showing toast message after done uploading.
                                     Toast.makeText(getApplicationContext(), "Barang Bukti Berhasil Ditambahkan ", Toast.LENGTH_LONG).show();
                                     Uri downloadUrl = uri;
-                                    ImageUploadInfo imageUploadInfo = new ImageUploadInfo(TempImageName, TempRegistrationName, TempInformationName, TempStatusName, downloadUrl.toString());
-
                                     // Getting image upload ID.
                                     String ImageUploadId = databaseReferenceProcess.push().getKey();
+
+                                    ImageUploadInfo imageUploadInfo = new ImageUploadInfo(TempImageName, TempRegistrationName, TempInformationName, TempStatusName, downloadUrl.toString(), ImageUploadId);
+
+
 
                                     // Adding image upload id s child element into databaseReference.
                                     databaseReferenceProcess.child(ImageUploadId).setValue(imageUploadInfo);
@@ -257,10 +259,12 @@ public class UploadImageActivity extends AppCompatActivity {
                                     // Showing toast message after done uploading.
                                     Toast.makeText(getApplicationContext(), "Barang Bukti Berhasil Ditambahkan ", Toast.LENGTH_LONG).show();
                                     Uri downloadUrl = uri;
-                                    ImageUploadInfo imageUploadInfo = new ImageUploadInfo(TempImageName, TempRegistrationName, TempInformationName, TempStatusName, downloadUrl.toString());
-
                                     // Getting image upload ID.
                                     String ImageUploadId = databaseReferenceTaken.push().getKey();
+
+                                    ImageUploadInfo imageUploadInfo = new ImageUploadInfo(TempImageName, TempRegistrationName, TempInformationName, TempStatusName, downloadUrl.toString(), ImageUploadId);
+
+
 
                                     // Adding image upload id s child element into databaseReference.
                                     databaseReferenceTaken.child(ImageUploadId).setValue(imageUploadInfo);
@@ -339,10 +343,12 @@ public class UploadImageActivity extends AppCompatActivity {
                                     // Showing toast message after done uploading.
                                     Toast.makeText(getApplicationContext(), "Barang Bukti Berhasil Ditambahkan ", Toast.LENGTH_LONG).show();
                                     Uri downloadUrl = uri;
-                                    ImageUploadInfo imageUploadInfo = new ImageUploadInfo(TempImageName, TempRegistrationName, TempInformationName, TempStatusName, downloadUrl.toString());
-
                                     // Getting image upload ID.
                                     String ImageUploadId = databaseReferenceReturn.push().getKey();
+
+                                    ImageUploadInfo imageUploadInfo = new ImageUploadInfo(TempImageName, TempRegistrationName, TempInformationName, TempStatusName, downloadUrl.toString(), ImageUploadId);
+
+
 
                                     // Adding image upload id s child element into databaseReference.
                                     databaseReferenceReturn.child(ImageUploadId).setValue(imageUploadInfo);

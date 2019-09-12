@@ -1,20 +1,13 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardView"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/activity_horizontal"
-    android:layout_marginTop="@dimen/activity_vertical"
-    android:layout_marginEnd="@dimen/activity_horizontal"
-    android:layout_marginBottom="@dimen/activity_vertical"
-    card_view:cardBackgroundColor="@color/coloronSecondary"
-    card_view:cardCornerRadius="6dp"
-    card_view:cardElevation="4dp"
-    card_view:cardMaxElevation="6dp"
-    >
+
 
     <RelativeLayout
+        android:layout_marginStart="@dimen/activity_horizontal"
+        android:layout_marginTop="@dimen/activity_vertical"
+        android:layout_marginEnd="@dimen/activity_horizontal"
+        android:backgroundTint="@android:color/darker_gray"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -27,7 +20,7 @@
             android:layout_toEndOf="@id/img_photo"
             android:text="Nama Barang Bukti"
             android:textColor="@android:color/black"
-            android:textSize="32sp" />
+            android:textSize="24sp" />
 
         <TextView
 
@@ -37,11 +30,10 @@
             android:layout_below="@id/tv_item_name"
             android:layout_marginStart="@dimen/activity_horizontal"
             android:layout_marginEnd="@dimen/activity_horizontal"
-            android:layout_marginBottom="@dimen/activity_vertical"
             android:layout_toEndOf="@id/img_photo"
             android:text="No. Registration"
             android:textColor="@android:color/darker_gray"
-            android:textSize="16sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/tv_item_info"
@@ -53,26 +45,26 @@
             android:layout_toEndOf="@id/img_photo"
             android:maxLines="1"
             android:text="Keterangan"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
 
-        <TextView
+        <Button
             android:id="@+id/tv_item_status"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_below="@id/tv_item_info"
             android:layout_marginStart="@dimen/activity_horizontal"
             android:layout_marginBottom="@dimen/activity_vertical"
             android:layout_marginEnd="@dimen/activity_horizontal"
             android:layout_toEndOf="@id/img_photo"
             android:text="Status"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_photo"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginStart="@dimen/activity_horizontal"
             android:layout_marginTop="@dimen/activity_vertical"
             android:layout_marginBottom="@dimen/activity_vertical"
@@ -80,4 +72,3 @@
             tools:src="@tools:sample/avatars" />
 
     </RelativeLayout>
-</androidx.cardview.widget.CardView>
