@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.e_barangbuktimajene">
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/AppTheme.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,20 +18,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DisplayStatusTaken" />
-        <activity android:name=".DisplayStatusReturned" />
-        <activity android:name=".DisplayStatusProcess" />
-        <activity android:name=".UploadImageActivity" />
+        <activity
+            android:name=".DisplayStatusTaken"
+            android:label="Barang Bukti Dirampas" />
+        <activity
+            android:name=".DisplayStatusReturned"
+            android:label="Barang Bukti Dikembalikan" />
+        <activity
+            android:name=".DisplayStatusProcess"
+            android:label="Barang Bukti Diproses" />
+        <activity
+            android:name=".UploadImageActivity"
+            android:label="Tambah Barang Bukti" />
         <activity android:name=".DetailActivity" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 
 
 </manifest>

@@ -13,6 +13,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -56,6 +57,7 @@ public class UploadImageActivity extends AppCompatActivity {
 
     // Creating ImageView.
     ImageView SelectImage;
+    TextView status;
 
     // Creating URI.
     Uri FilePathUri;
@@ -93,6 +95,7 @@ public class UploadImageActivity extends AppCompatActivity {
 
         // Assign ID'S to image view.
         SelectImage = findViewById(R.id.ShowImageView);
+        status = findViewById(R.id.tv_item_status);
 
         // Assigning Id to ProgressDialog.
         progressDialog = new ProgressDialog(UploadImageActivity.this);
@@ -431,6 +434,7 @@ public class UploadImageActivity extends AppCompatActivity {
     }
 
     public void selectedStatus() {
+        status.setText(StatusName);
         switch (StatusName) {
 
             case "Diproses":

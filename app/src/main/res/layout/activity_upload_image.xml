@@ -6,76 +6,87 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <RelativeLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".MainActivity">
-
-        <Button
-            android:id="@+id/Btn_Choose_Image"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ShowImageView"
-            android:layout_marginTop="20dp"
-            android:text="Choose Image" />
-
-        <Button
-            android:id="@+id/ButtonUploadImage"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/InformationEditText"
-            android:layout_marginTop="20dp"
-            android:text="Tambahkan Barang Bukti" />
-
-        <EditText
-            android:id="@+id/ImageNameEditText"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Btn_Choose_Image"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:hint="Nama Perkara" />
-
-
-        <EditText
-            android:id="@+id/RegistrationEditText"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ImageNameEditText"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:hint="No Registrasi Barang Bukti" />
-
-
-        <EditText
-            android:id="@+id/InformationEditText"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/RegistrationEditText"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:hint="Keterangan" />
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
 
         <ImageView
             android:id="@+id/ShowImageView"
+            android:layout_width="match_parent"
             android:scaleType="centerCrop"
-            android:layout_width="fill_parent"
-            android:layout_height="200dp"
-            android:foregroundGravity="fill"
-            android:layout_below="@+id/textview"
-            android:layout_marginTop="20dp" />
+            android:layout_height="350dp"
+            android:src="@drawable/ic_photo_camera_black_24dp" />
 
-        <TextView
-            android:id="@+id/textview"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="sans-serif"
-            android:gravity="center"
-            android:text="Tambah Barang Bukti"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@id/tv_item_status"
+                style="@style/TextContent.Small.White"
+                android:drawableStart="@drawable/ic_check_black_24dp"
+                android:layout_marginTop="250dp"
+                android:background="#4D000000"
+                android:drawablePadding="4dp"
+                android:padding="8dp"
+                android:text="Status"
+                android:textColor="@android:color/white"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@drawable/bg_menu"
+                android:layout_below="@id/tv_item_status"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal"
+                    android:text="Tambah Barang Bukti"
+                    android:textAlignment="center"
+                    android:textSize="32sp" />
+
+                <EditText
+                    android:id="@+id/ImageNameEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Btn_Choose_Image"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:hint="Nama Perkara" />
+
+
+                <EditText
+                    android:id="@+id/RegistrationEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ImageNameEditText"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:hint="No Registrasi Barang Bukti" />
+
+
+                <EditText
+                    android:id="@+id/InformationEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RegistrationEditText"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:hint="Keterangan" />
+
+                <Button
+                    android:id="@+id/ButtonUploadImage"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/InformationEditText"
+                    android:layout_marginTop="20dp"
+                    android:text="Tambahkan Barang Bukti" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
 
 </ScrollView>

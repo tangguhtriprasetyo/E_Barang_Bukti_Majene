@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String Database_Path_Taken = "Taken_Item";
     public static final String Database_Path_Return = "Return_Item";
 
-    CardView process, returned, taken;
+    CardView process, returned, taken, add;
 
 
     @Override
@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         process = findViewById(R.id.card_view1);
         taken = findViewById(R.id.card_view2);
         returned = findViewById(R.id.card_view3);
+        add = findViewById(R.id.card_view4);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, UploadImageActivity.class);

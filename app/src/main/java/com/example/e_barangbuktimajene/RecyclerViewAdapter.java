@@ -60,7 +60,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View view) {
                 ImageUploadInfo clickedDataItem = MainImageUploadInfoList.get(holder.getAdapterPosition());
-                Toast.makeText(context, clickedDataItem.getImageID(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, clickedDataItem.getImageName(), Toast.LENGTH_SHORT).show();
 
 
                 Intent intent = new Intent(context, DetailActivity.class);

@@ -2,6 +2,7 @@ package com.example.e_barangbuktimajene;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -38,6 +39,10 @@ public class DisplayStatusTaken extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_status_process);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("E - Barang Bukti Majene");
+        getSupportActionBar().setSubtitle("Dirampas Negara");
+
         recyclerView = findViewById(R.id.recyclerView);
 
         // Setting RecyclerView size true.
@@ -50,7 +55,7 @@ public class DisplayStatusTaken extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
 
         // Setting up message in Progress dialog.
-        progressDialog.setMessage("Loading Images From Firebase.");
+        progressDialog.setMessage("Tunggu Bentar Ya");
 
         // Showing progress dialog.
         progressDialog.show();
@@ -60,23 +65,24 @@ public class DisplayStatusTaken extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference(MainActivity.Database_Path_Taken);
 
         // Adding Add Value Event Listener to databaseReference.
-        databaseReference.addValueEventListener(new ValueEventListener() {@Override
-        public void onDataChange(DataSnapshot snapshot) {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
 
-            for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
 
-                ImageUploadInfo imageUploadInfo = postSnapshot.getValue(ImageUploadInfo.class);
+                    ImageUploadInfo imageUploadInfo = postSnapshot.getValue(ImageUploadInfo.class);
 
-                list.add(imageUploadInfo);
+                    list.add(imageUploadInfo);
+                }
+
+                adapter = new RecyclerViewAdapter(getApplicationContext(), list);
+
+                recyclerView.setAdapter(adapter);
+
+                // Hiding the progress dialog.
+                progressDialog.dismiss();
             }
-
-            adapter = new RecyclerViewAdapter(getApplicationContext(), list);
-
-            recyclerView.setAdapter(adapter);
-
-            // Hiding the progress dialog.
-            progressDialog.dismiss();
-        }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -87,5 +93,16 @@ public class DisplayStatusTaken extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

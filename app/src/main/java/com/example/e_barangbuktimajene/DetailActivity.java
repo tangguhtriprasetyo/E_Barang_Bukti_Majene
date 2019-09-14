@@ -1,6 +1,7 @@
 package com.example.e_barangbuktimajene;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,7 +42,7 @@ public class DetailActivity extends AppCompatActivity {
     DatabaseReference databaseReferenceReturn;
 
     ImageView showImageView;
-    TextView name, reg, info, status;
+    TextView name, reg, info, status1, status2;
     Button changeStatusButton;
     String StatusName = "Pilih Status Barang Bukti!";
 
@@ -54,13 +55,16 @@ public class DetailActivity extends AppCompatActivity {
         databaseReferenceTaken = FirebaseDatabase.getInstance().getReference(MainActivity.Database_Path_Taken);
         databaseReferenceReturn = FirebaseDatabase.getInstance().getReference(MainActivity.Database_Path_Return);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         changeStatusButton = findViewById(R.id.btn_change_status);
 
         showImageView = findViewById(R.id.ShowImageView);
         name = findViewById(R.id.tv_item_name);
         reg = findViewById(R.id.tv_item_Registration);
         info = findViewById(R.id.tv_item_info);
-        status = findViewById(R.id.tv_item_status);
+        status1 = findViewById(R.id.tv_item_status);
+        status2 = findViewById(R.id.tv_item_status);
 
         getIncomingIntent();
 
@@ -86,7 +90,8 @@ public class DetailActivity extends AppCompatActivity {
             name.setText(extName);
             reg.setText(extReg);
             info.setText(extInfo);
-            status.setText(extStatus);
+            status1.setText(extStatus);
+            status2.setText(extStatus);
 
             Glide.with(this)
                     .load(extImage)
@@ -103,19 +108,25 @@ public class DetailActivity extends AppCompatActivity {
     public void deleteDataProcess() {
         String extNameId = getIntent().getExtras().getString(EXTRA_IMAGEID);
         databaseReferenceProcess.child(extNameId).removeValue();
-        Toast.makeText(this, extNameId, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(DetailActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     public void deleteDataTaken() {
         String extNameId = getIntent().getExtras().getString(EXTRA_IMAGEID);
         databaseReferenceTaken.child(extNameId).removeValue();
-        Toast.makeText(this, extNameId, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(DetailActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     public void deleteDataReturn() {
         String extNameId = getIntent().getExtras().getString(EXTRA_IMAGEID);
         databaseReferenceReturn.child(extNameId).removeValue();
-        Toast.makeText(this, extNameId, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(DetailActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     public void showDialog() {
@@ -163,8 +174,6 @@ public class DetailActivity extends AppCompatActivity {
                 // Calling method to upload selected image on Firebase storage.
                 UploadProcess();
                 deleteData();
-
-                Toast.makeText(this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
                 finish();
                 break;
 
@@ -173,8 +182,6 @@ public class DetailActivity extends AppCompatActivity {
                 // Calling method to upload selected image on Firebase storage.
                 UploadTaken();
                 deleteData();
-
-                Toast.makeText(this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
                 finish();
                 break;
 
@@ -183,15 +190,13 @@ public class DetailActivity extends AppCompatActivity {
                 // Calling method to upload selected image on Firebase storage.
                 UploadReturn();
                 deleteData();
-
-                Toast.makeText(this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
                 finish();
                 break;
 
             case "Hapus Barang Bukti":
 
                 deleteData();
-                Toast.makeText(this, "Status Barang Bukti : " + StatusName, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Barang Bukti Dihapus", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
 
