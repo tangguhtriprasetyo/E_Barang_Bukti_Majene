@@ -2,4 +2,19 @@
     <string name="app_name">E-Barang Bukti Majene</string>
     <string name="tv_institution">KEJAKSAAN NEGERI MAJENE</string>
     <string name="tv_title1">E-BARANG BUKTI</string>
+    <string name="tv_title_name">E - BARANG BUKTI</string>
+    <string name="tv_subtitle">KEJAKSAAN TINGGI MAJENE</string>
+    <string name="tv_category">Kategori</string>
+    <string name="tv_process">Sedang Diproses</string>
+    <string name="tv_taken">Dirampas Negara / Dimusnahkan</string>
+    <string name="tv_return">Dikembalikan Ke Yang Berhak</string>
+    <string name="tv_add">Tambahkan Barang Bukti</string>
+    <string name="tv_status">Status</string>
+    <string name="tv_item_name">Nama Barang Bukti</string>
+    <string name="tv_registration">No. Registrasi</string>
+    <string name="tv_desc">Keterangan</string>
+    <string name="tv_status_change">Ganti Status</string>
+    <string name="tv_title_item">Tambah Barang Bukti</string>
+    <string name="tv_name_case">Nama Perkara</string>
+    <string name="tv_category_menu">KATEGORI</string>
 </resources>

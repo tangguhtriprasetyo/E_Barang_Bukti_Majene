@@ -1,15 +1,11 @@
-
-
-    <RelativeLayout
-        android:layout_marginStart="@dimen/activity_horizontal"
-        android:layout_marginTop="@dimen/activity_vertical"
-        android:layout_marginEnd="@dimen/activity_horizontal"
-        android:backgroundTint="@android:color/darker_gray"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<RelativeLayout android:layout_marginStart="@dimen/activity_horizontal"
+    android:layout_marginTop="@dimen/activity_vertical"
+    android:layout_marginEnd="@dimen/activity_horizontal"
+    android:backgroundTint="@android:color/darker_gray"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_item_name"
@@ -18,7 +14,7 @@
             android:layout_marginStart="@dimen/activity_horizontal"
             android:layout_marginEnd="@dimen/activity_horizontal"
             android:layout_toEndOf="@id/img_photo"
-            android:text="Nama Barang Bukti"
+            android:text="@string/tv_item_name"
             android:textColor="@android:color/black"
             android:textSize="24sp" />
 
@@ -31,7 +27,7 @@
             android:layout_marginStart="@dimen/activity_horizontal"
             android:layout_marginEnd="@dimen/activity_horizontal"
             android:layout_toEndOf="@id/img_photo"
-            android:text="No. Registration"
+            android:text="@string/tv_registration"
             android:textColor="@android:color/darker_gray"
             android:textSize="12sp" />
 
@@ -45,7 +41,7 @@
             android:layout_marginEnd="@dimen/activity_horizontal"
             android:layout_toEndOf="@id/img_photo"
             android:maxLines="2"
-            android:text="Keterangan"
+            android:text="@string/tv_desc"
             android:textSize="16sp" />
 
 
@@ -58,7 +54,7 @@
             android:layout_marginBottom="@dimen/activity_vertical"
             android:layout_marginEnd="@dimen/activity_horizontal"
             android:layout_toEndOf="@id/img_photo"
-            android:text="Status"
+            android:text="@string/tv_status"
             android:textSize="14sp" />
 
 

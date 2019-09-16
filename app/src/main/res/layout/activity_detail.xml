@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary">
 
         <ImageView
@@ -30,7 +28,7 @@
                 android:drawablePadding="4dp"
                 android:layout_marginTop="250dp"
                 android:padding="8dp"
-                android:text="Status"
+                android:text="@string/tv_status"
                 android:textColor="@android:color/white"/>
 
             <LinearLayout
@@ -44,13 +42,13 @@
                     android:id="@+id/tv_item_name"
                     style="@style/TextContent.Black"
                     android:textSize="32sp"
-                    android:text="Nama Barang Bukti"
+                    android:text="@string/tv_item_name"
                     android:layout_marginTop="@dimen/activity_vertical"/>
 
                 <TextView
                     android:id="@+id/tv_item_Registration"
                     style="@style/TextContent.Subtitle"
-                    android:text="No. Registrasi"
+                    android:text="@string/tv_registration"
                     android:layout_marginBottom="@dimen/activity_vertical"
                     android:lineSpacingMultiplier="1"/>
 
@@ -68,12 +66,12 @@
 
                         <TextView
                             style="@style/TextSpec.Field"
-                            android:text="Status" />
+                            android:text="@string/tv_status" />
 
                         <TextView
                             android:id="@+id/tv_item_status"
                             style="@style/TextSpec.Value"
-                            android:text="Status"/>
+                            android:text="@string/tv_status"/>
                     </TableRow>
 
                     <TableRow
@@ -83,13 +81,13 @@
 
                         <TextView
                             style="@style/TextSpec.Field"
-                            android:text="Keterangan" />
+                            android:text="@string/tv_desc" />
 
                         <TextView
                             android:id="@+id/tv_item_info"
                             style="@style/TextSpec.Value"
                             android:layout_height="85dp"
-                            android:text="Keterangan"/>
+                            android:text="@string/tv_desc"/>
                     </TableRow>
 
 
@@ -100,9 +98,8 @@
                     android:layout_width="wrap_content"
                     android:layout_gravity="center"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/InformationEditText"
                     android:layout_marginTop="20dp"
-                    android:text="Ganti Status" />
+                    android:text="@string/tv_status_change" />
             </LinearLayout>
         </RelativeLayout>
     </FrameLayout>
