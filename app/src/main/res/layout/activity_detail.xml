@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -13,7 +12,7 @@
             android:id="@+id/ShowImageView"
             android:layout_width="match_parent"
             android:scaleType="centerCrop"
-            android:layout_height="350dp"
+            android:layout_height="250dp"
             android:src="@drawable/ic_photo_camera_black_24dp" />
 
         <RelativeLayout
@@ -26,15 +25,16 @@
                 android:drawableStart="@drawable/ic_check_black_24dp"
                 android:background="#4D000000"
                 android:drawablePadding="4dp"
-                android:layout_marginTop="250dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="200dp"
                 android:padding="8dp"
                 android:text="@string/tv_status"
                 android:textColor="@android:color/white"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:background="@drawable/bg_menu"
+                android:layout_height="match_parent"
+                android:background="@color/coloronSecondary"
                 android:layout_below="@id/tv_item_status"
                 android:orientation="vertical">
 
@@ -69,7 +69,7 @@
                             android:text="@string/tv_status" />
 
                         <TextView
-                            android:id="@+id/tv_item_status"
+                            android:id="@+id/tv_item_status_2"
                             style="@style/TextSpec.Value"
                             android:text="@string/tv_status"/>
                     </TableRow>
@@ -93,14 +93,20 @@
 
                 </TableLayout>
 
-                <Button
-                    android:id="@+id/btn_change_status"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/tv_status_change" />
-            </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:id="@+id/btn_change_status"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="@dimen/activity_vertical"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_status_change" />
+
+                </RelativeLayout>
+                </LinearLayout>
         </RelativeLayout>
     </FrameLayout>
 

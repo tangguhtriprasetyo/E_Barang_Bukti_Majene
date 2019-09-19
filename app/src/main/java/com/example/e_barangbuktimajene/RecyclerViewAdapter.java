@@ -50,7 +50,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.imageNameTextView.setText(UploadInfo.getImageName());
         holder.registrationNameTextView.setText(UploadInfo.getRegistrationName());
-        holder.informationNameTextView.setText(UploadInfo.getInformationName());
+        //holder.informationNameTextView.setText(UploadInfo.getInformationName());
         holder.statusNameTextView.setText(UploadInfo.getStatusName());
 
         //Loading image from Glide library.
@@ -89,7 +89,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public ImageView imageView;
         public TextView imageNameTextView;
         public TextView registrationNameTextView;
-        public TextView informationNameTextView;
+        //public TextView informationNameTextView;
         public TextView statusNameTextView;
 
         public ViewHolder(View itemView) {
@@ -99,7 +99,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             imageNameTextView = itemView.findViewById(R.id.tv_item_name);
             registrationNameTextView = itemView.findViewById(R.id.tv_item_Registration);
-            informationNameTextView = itemView.findViewById(R.id.tv_item_info);
+            //informationNameTextView = itemView.findViewById(R.id.tv_item_info);
             statusNameTextView = itemView.findViewById(R.id.tv_item_status);
         }
     }

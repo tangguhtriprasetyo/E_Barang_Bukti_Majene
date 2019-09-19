@@ -64,7 +64,7 @@ public class DetailActivity extends AppCompatActivity {
         reg = findViewById(R.id.tv_item_Registration);
         info = findViewById(R.id.tv_item_info);
         status1 = findViewById(R.id.tv_item_status);
-        status2 = findViewById(R.id.tv_item_status);
+        status2 = findViewById(R.id.tv_item_status_2);
 
         getIncomingIntent();
 
@@ -98,7 +98,7 @@ public class DetailActivity extends AppCompatActivity {
                     .apply(new RequestOptions())
                     .into(showImageView);
 
-            DetailActivity.this.setTitle(extName);
+            DetailActivity.this.setTitle("Detail Barang Bukti");
         } else {
             Toast.makeText(this, "No API Data", Toast.LENGTH_SHORT).show();
         }

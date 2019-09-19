@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -13,7 +12,7 @@
             android:id="@+id/ShowImageView"
             android:layout_width="match_parent"
             android:scaleType="centerCrop"
-            android:layout_height="350dp"
+            android:layout_height="250dp"
             android:src="@drawable/ic_photo_camera_black_24dp" />
 
         <RelativeLayout
@@ -24,7 +23,8 @@
                 android:id="@id/tv_item_status"
                 style="@style/TextContent.Small.White"
                 android:drawableStart="@drawable/ic_check_black_24dp"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="200dp"
+                android:layout_marginStart="0dp"
                 android:background="#4D000000"
                 android:drawablePadding="4dp"
                 android:padding="8dp"
@@ -33,8 +33,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:background="@drawable/bg_menu"
+                android:layout_height="wrap_content"
+                android:background="@color/coloronSecondary"
                 android:layout_below="@id/tv_item_status"
                 android:orientation="vertical">
 
@@ -44,7 +44,7 @@
                     android:layout_marginTop="@dimen/activity_horizontal"
                     android:text="@string/tv_title_item"
                     android:textAlignment="center"
-                    android:textSize="32sp" />
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/ImageNameEditText"
@@ -75,14 +75,23 @@
                     android:hint="@string/tv_desc"
                     android:inputType="textMultiLine" />
 
-                <Button
-                    android:id="@+id/ButtonUploadImage"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/tv_title_item" />
-            </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/activity_vertical"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/ButtonUploadImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="@dimen/activity_vertical"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/tv_title_item" />
+
+                </RelativeLayout>
+
+                </LinearLayout>
         </RelativeLayout>
     </FrameLayout>
 
