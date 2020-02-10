@@ -28,7 +28,7 @@ public class DisplayStatusReturned extends AppCompatActivity {
     // Creating RecyclerView.Adapter.
     RecyclerView.Adapter adapter;
 
-    // Creating Progress dialog
+    // Creating Progress dialog tes
     ProgressDialog progressDialog;
 
     // Creating List of ImageUploadInfo class.
